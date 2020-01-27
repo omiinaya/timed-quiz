@@ -11,19 +11,19 @@ var questions = [
         answer: "parentheses"
     },
     {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        title: "Which of these colors isn't a primary color?",
+        choices: ["yellow", "red", "blue", "green"],
+        answer: "green"
       },
       {
-        title: "title four",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        title: "These numbers all even except for:",
+        choices: ["one", "six", "four", "two"],
+        answer: "one"
       },
       {
-        title: "title five",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        title: "Which of these is NOT considered a programming language?",
+        choices: ["Java", "HTML", "Python", "C++"],
+        answer: ""
       },
     
 ];
@@ -33,6 +33,7 @@ function setPage() {
 }
 function questionHide() {
     $('#container-questions').hide()
+    $('#container-over').hide()
 }
 function changeValues() {
     document.getElementById("question-text").innerText=questions[counter].title;
@@ -59,14 +60,21 @@ function isRightAns(a) {
         counter++;
     } else {
         document.getElementById("check-correct").innerText="Incorrect!";
+        counter++;
     }
 }
 function nextQuestion() {
-    document.getElementById("ans1").disabled=false;
-    document.getElementById("ans2").disabled=false;
-    document.getElementById("ans3").disabled=false;
-    document.getElementById("ans4").disabled=false;
-    document.getElementById("check-correct").innerText="";
-    $('input[name=options]').prop('checked', false);
-    changeValues()
+    if (counter <= questions.length-1) {
+        document.getElementById("ans1").disabled=false;
+        document.getElementById("ans2").disabled=false;
+        document.getElementById("ans3").disabled=false;
+        document.getElementById("ans4").disabled=false;
+        document.getElementById("check-correct").innerText="";
+        $('input[name=options]').prop('checked', false);
+        changeValues()
+    } else {
+        $('#container-questions').hide();
+        $('#container-over').show();
+    }
+    console.log(counter);
 }

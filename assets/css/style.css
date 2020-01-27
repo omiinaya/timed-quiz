@@ -2,3 +2,12 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+.container {
+    background-color: black;
+    color: white;
+    width: 630px;
+    height: 250px;
+    opacity: 95%;
+    vertical-align: middle;
+    display: table-cell;
+}

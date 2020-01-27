@@ -1,21 +1,20 @@
 <!DOCTYPE html>
     <center>
         <head>
-            <title>Quiz</title>
+            <title>Timed Quiz</title>
             <script src="assets/scripts/scripts.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <link rel="stylesheet" href="assets/css/style.css">
         </head>
         <body onload=setPage()>
-            <div id="container-quiz">
+            <div class="container" id="container-quiz">
                 <p>Click here to start the quiz!</p>
-                <button onclick="quizStart()">Start Quiz</button>
+                <button onclick="quizStart()">Start Quiz</button>  
             </div>
-            <div id="container-questions">
+            <div class="container" id="container-questions">
                 <ul>
                     <li>
                         <p id="question-text"></p>
-                        <p id="check-correct"></p>
                         <input type="radio" name="options" id="ans1" onclick=isRightAns(counter)><label id="label1" labelfor="ans1"></label>
                         <input type="radio" name="options" id="ans2" onclick=isRightAns(counter)><label id="label2" labelfor="ans2"></label>
                         <input type="radio" name="options" id="ans3" onclick=isRightAns(counter)><label id="label3" labelfor="ans3"></label>
@@ -23,6 +22,10 @@
                     </li>
                 </ul>
                 <button id="submit" onclick=nextQuestion()>Submit Answer</button>
+                <p id="check-correct"> </p>
+            </div>
+            <div class="container" id="container-over">
+                That's it!
             </div>
         </body>
     </center>
