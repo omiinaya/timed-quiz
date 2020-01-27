@@ -51,10 +51,6 @@ function quizStart() {
     $('#container-questions').show();
 }
 function isRightAns(a) {
-    document.getElementById("ans1").disabled=true;
-    document.getElementById("ans2").disabled=true;
-    document.getElementById("ans3").disabled=true;
-    document.getElementById("ans4").disabled=true;
     if (document.querySelector('input[name="options"]:checked').value == questions[a].answer) {
         document.getElementById("check-correct").innerText="Correct!";
         $('#test').hide();
@@ -66,10 +62,6 @@ function nextQuestion() {
     counter++;
     $('#test').show();
     if (counter <= questions.length-1) {
-        document.getElementById("ans1").disabled=false;
-        document.getElementById("ans2").disabled=false;
-        document.getElementById("ans3").disabled=false;
-        document.getElementById("ans4").disabled=false;
         document.getElementById("check-correct").innerText="";
         $('input[name=options]').prop('checked', false);
         changeValues()
