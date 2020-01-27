@@ -28,7 +28,6 @@ var questions = [
         choices: ["Java", "HTML", "Python", "C++"],
         answer: "HTML"
       },
-    
 ];
 function setPage() {
     questionHide()
@@ -80,6 +79,7 @@ function nextQuestion() {
     } else {
         $('#container-questions').hide();
         $('#container-over').show();
+        clearInterval(timer);
     }
 }
 function countdownTime() {
@@ -88,9 +88,9 @@ function countdownTime() {
         if(time < 0) {
             $('#container-questions').hide();
             $('#container-timesup').show();
-            clearInterval(id);
+            clearInterval(timer);
         } else {
-            
+            document.getElementById("time-left").innerText="Time: "+time;
         }
     }, 1000);   
 }
