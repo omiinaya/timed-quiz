@@ -40,6 +40,7 @@ function questionHide() {
     $('#container-over').hide();
     $('#container-score').hide();
     $('#container-timesup').hide();
+    $('#container-highscore').hide();
 }
 function changeValues() {
     document.getElementById("question-text").innerText=questions[counter].title;
@@ -86,6 +87,7 @@ function nextQuestion() {
         clearInterval(downTimer);
         clearInterval(upTimer);
         document.getElementById("finish-time").innerText="You finished in "+oTime+" seconds with a score of "+score+"/5!"
+        $('#container-highscore').show();
     }
 }
 function countdownTime() {
@@ -96,6 +98,8 @@ function countdownTime() {
             $('#container-timesup').show();
             clearInterval(downTimer);
             clearInterval(upTimer);
+            document.getElementById("ran-out").innerText="Time's up. Your final score is "+score+"/5."
+            $('#container-highscore').show();
         } else {
             document.getElementById("time-left").innerText="Time Left: "+qTime;
         }

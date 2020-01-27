@@ -10,7 +10,7 @@ li {
     background-color: black;
     color: white;
     width: 630px;
-    height: 250px;
+    height: 200px;
     opacity: 90%;
     vertical-align: middle;
     display: table-cell;
@@ -25,6 +25,18 @@ li {
     opacity: 90%;
     margin: 0 auto;
     width: 630px;
+
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+#container-highscore {
+    background-color: black;
+    color: white;
+    opacity: 90%;
+    margin: 0 auto;
+    width: 630px;
+    height: 330px;
 
     border-color: white;
     border-width: 3px;
