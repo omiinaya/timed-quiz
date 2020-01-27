@@ -1,4 +1,7 @@
 var counter=0;
+var page=1;
+var score=0;
+var time=60;
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -30,10 +33,13 @@ var questions = [
 function setPage() {
     questionHide()
     changeValues()
+    document.getElementById("score-text").innerText="Score: "+score+"/5";
 }
 function questionHide() {
-    $('#container-questions').hide()
-    $('#container-over').hide()
+    $('#container-questions').hide();
+    $('#container-over').hide();
+    $('#container-score').hide();
+    $('#container-timesup').hide();
 }
 function changeValues() {
     document.getElementById("question-text").innerText=questions[counter].title;
@@ -45,20 +51,26 @@ function changeValues() {
     document.getElementById("label2").innerText=questions[counter].choices[1];
     document.getElementById("label3").innerText=questions[counter].choices[2];
     document.getElementById("label4").innerText=questions[counter].choices[3];
+    document.getElementById("page-number").innerText=page+" of 5";
 }
 function quizStart() {
+    countdownTime()
     $('#container-quiz').hide();
     $('#container-questions').show();
+    $('#container-score').show();
 }
 function isRightAns(a) {
     if (document.querySelector('input[name="options"]:checked').value == questions[a].answer) {
         document.getElementById("check-correct").innerText="Correct!";
+        score++;
+        document.getElementById("score-text").innerText="Score: "+score+"/5";
         $('#test').hide();
     } else {
         document.getElementById("check-correct").innerText="Incorrect!";
     }
 }
 function nextQuestion() {
+    page++;
     counter++;
     $('#test').show();
     if (counter <= questions.length-1) {
@@ -69,5 +81,16 @@ function nextQuestion() {
         $('#container-questions').hide();
         $('#container-over').show();
     }
-    console.log(counter);
+}
+function countdownTime() {
+    timer = setInterval(function() {
+        time--;
+        if(time < 0) {
+            $('#container-questions').hide();
+            $('#container-timesup').show();
+            clearInterval(id);
+        } else {
+            
+        }
+    }, 1000);   
 }

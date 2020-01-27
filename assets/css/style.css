@@ -10,7 +10,17 @@ ul {
     opacity: 90%;
     vertical-align: middle;
     display: table-cell;
-    transform: translateY(50%);
+    
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+#container-score {
+    background-color: black;
+    color: white;
+    opacity: 90%;
+    margin: 0 auto;
+    width: 630px;
 
     border-color: white;
     border-width: 3px;
