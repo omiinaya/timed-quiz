@@ -2,7 +2,7 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-li {
+#container-score li {
     display: inline;
     padding: 7%;
 }
@@ -37,6 +37,8 @@ li {
     margin: 0 auto;
     width: 630px;
     height: 330px;
+    vertical-align: middle;
+    display: table-cell;
 
     border-color: white;
     border-width: 3px;

@@ -3,6 +3,7 @@
         <head>
             <title>Timed Quiz</title>
             <script src="assets/scripts/scripts.js"></script>
+            <script src="assets/scripts/questions.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <link rel="stylesheet" href="assets/css/style.css">
         </head>
@@ -43,13 +44,11 @@
             <br>
             <div id="container-highscore">
                 <p>Enter your name to save your score!</p>
-
                 <input type="text" id="highscore-text" placeholder="Name"/>
-
-                <button onclick=saveData()>Submit</button>
-
+                <button onclick=storeScores()>Submit</button>
                 <h2>Highscores:</h2>
-                <ul></ul>
+                <ul id="highscores-list"></ul>
+                <button onclick=tryAgain()>Try Again</button>
             </div>
         </body>
     </center>

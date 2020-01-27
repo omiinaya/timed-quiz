@@ -3,34 +3,7 @@ var page=1;
 var score=0;
 var oTime=0;
 var qTime=15;
-var records=0;
-var questions = [
-    {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
-    },
-    {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
-    },
-    {
-        title: "Which of these colors isn't a primary color?",
-        choices: ["yellow", "red", "blue", "green"],
-        answer: "green"
-      },
-      {
-        title: "These numbers all even except for:",
-        choices: ["one", "six", "four", "two"],
-        answer: "one"
-      },
-      {
-        title: "Which of these is NOT considered a programming language?",
-        choices: ["Java", "HTML", "Python", "C++"],
-        answer: "HTML"
-      },
-];
+
 function setPage() {
     questionHide()
     changeValues()
@@ -113,6 +86,25 @@ function countupTime() {
         
     }, 1000);   
 }
-function saveData() {
-    
+function storeScores() {
+    name=document.getElementById("highscore-text").value;
+    localStorage.setItem('user', name);
+    localStorage.setItem('score', score);
+    var storedUser = localStorage.getItem('user');
+    var storedScored = localStorage.getItem('score');
+    $('#highscores-list').append("<li>"+'Name: '+storedUser+" | "+'Score: '+storedScored+"/5</li>");
+}
+function tryAgain() {
+    counter=0;
+    page=1;
+    score=0;
+    oTime=0;
+    qTime=15;
+    $('#container-over').hide();
+    $('#container-timesup').hide();
+    $('#container-highscore').hide();
+    $('#container-questions').show();
+    changeValues()
+    countdownTime()
+    countupTime()
 }
