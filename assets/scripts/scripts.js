@@ -90,9 +90,11 @@ function storeScores() {
     name=document.getElementById("highscore-text").value;
     localStorage.setItem('user', name);
     localStorage.setItem('score', score);
+    localStorage.setItem('time', oTime);
     var storedUser = localStorage.getItem('user');
-    var storedScored = localStorage.getItem('score');
-    $('#highscores-list').append("<li>"+'Name: '+storedUser+" | "+'Score: '+storedScored+"/5</li>");
+    var storedScore = localStorage.getItem('score');
+    var storedTime = localStorage.getItem('time');
+    $('#highscores-list').append("<li>"+'Name: '+storedUser+" | "+'Score: '+storedScore+"/5 | Time: "+storedTime+"</li>");
 }
 function tryAgain() {
     counter=0;
