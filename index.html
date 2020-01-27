@@ -12,9 +12,10 @@
                 <button onclick="quizStart()">Start Quiz</button>  
             </div>
             <div class="container" id="container-questions">
-                <ul>
+                <p id="question-text"></p>
+                <p id="check-correct"></p>
+                <ul id="test">
                     <li>
-                        <p id="question-text"></p>
                         <input type="radio" name="options" id="ans1" onclick=isRightAns(counter)><label id="label1" labelfor="ans1"></label>
                         <input type="radio" name="options" id="ans2" onclick=isRightAns(counter)><label id="label2" labelfor="ans2"></label>
                         <input type="radio" name="options" id="ans3" onclick=isRightAns(counter)><label id="label3" labelfor="ans3"></label>
@@ -22,7 +23,6 @@
                     </li>
                 </ul>
                 <button id="submit" onclick=nextQuestion()>Submit Answer</button>
-                <p id="check-correct"> </p>
             </div>
             <div class="container" id="container-over">
                 That's it!

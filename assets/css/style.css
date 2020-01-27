@@ -7,7 +7,18 @@ ul {
     color: white;
     width: 630px;
     height: 250px;
-    opacity: 95%;
+    opacity: 90%;
     vertical-align: middle;
     display: table-cell;
+    transform: translateY(50%);
+
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
