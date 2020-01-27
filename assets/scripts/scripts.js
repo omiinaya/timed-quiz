@@ -3,6 +3,7 @@ var page=1;
 var score=0;
 var oTime=0;
 var qTime=15;
+var records=0;
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -111,4 +112,7 @@ function countupTime() {
         document.getElementById("time-passed").innerText="Time Passed: "+oTime;
         
     }, 1000);   
+}
+function saveData() {
+    
 }
