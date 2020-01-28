@@ -58,10 +58,12 @@ function nextQuestion() {
     } else {
         $('#container-questions').hide();
         $('#container-over').show();
+        $('#container-highscore').show();
+
         clearInterval(downTimer);
         clearInterval(upTimer);
+
         document.getElementById("finish-time").innerText="You finished in "+oTime+" seconds with a score of "+score+"/5!"
-        $('#container-highscore').show();
     }
 }
 function countdownTime() {
@@ -70,10 +72,12 @@ function countdownTime() {
         if(qTime < 0) {
             $('#container-questions').hide();
             $('#container-timesup').show();
+            $('#container-highscore').show();
+
             clearInterval(downTimer);
             clearInterval(upTimer);
+
             document.getElementById("ran-out").innerText="Time's up. Your final score is "+score+"/5."
-            $('#container-highscore').show();
         } else {
             document.getElementById("time-left").innerText="Time Left: "+qTime;
         }
@@ -83,21 +87,25 @@ function countupTime() {
     upTimer = setInterval(function() {
         oTime++;
         document.getElementById("time-passed").innerText="Time Passed: "+oTime;
-        
     }, 1000);   
 }
 function storeScores() {
     name=document.getElementById("highscore-text").value;
+
     localStorage.setItem('user', name);
     localStorage.setItem('score', score);
     localStorage.setItem('time', oTime);
+
     var storedUser = localStorage.getItem('user');
     var storedScore = localStorage.getItem('score');
     var storedTime = localStorage.getItem('time');
+
     $('#highscores-list').append("<li>"+'Name: '+storedUser+" | "+'Score: '+storedScore+"/5 | Time: "+storedTime+"</li>");
+
     document.getElementById("record-submit").innerText = "Your record has been submitted!";
     document.getElementById("highscore-text").disabled = true;
     document.getElementById("store-scores").disabled = true;
+
     resetVars()
 }
 function resetVars() {
@@ -108,14 +116,16 @@ function resetVars() {
     qTime=15;
 }
 function tryAgain() {
-    resetVars()
     $('#container-over').hide();
     $('#container-timesup').hide();
     $('#container-highscore').hide();
     $('#container-questions').show();
+
+    resetVars()
     changeValues()
     countdownTime()
     countupTime()
+
     document.getElementById("highscore-text").disabled = false;
     document.getElementById("store-scores").disabled = false;
     document.getElementById("record-submit").innerText = "Enter your name to save your score!";
