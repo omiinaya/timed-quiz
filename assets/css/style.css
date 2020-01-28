@@ -7,7 +7,6 @@ ul {
     padding: 5%;
 }
 .container {
-    padding: 5%;
     background-color: black;
     color: white;
     width: 630px;
@@ -20,7 +19,6 @@ ul {
     border-style: solid;
 }
 #container-score {
-    padding: 5%;
     background-color: black;
     color: white;
     width: 630px;
