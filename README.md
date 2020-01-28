@@ -1,5 +1,6 @@
 # timed-quiz
-
+# 
+# 
 This is a timed quiz made using a dynamic HTML webpage, semantic tags, JavaScript, CSS for styling, Bootstrap and jQuery.
 
 -The quiz starts when the user presses the quiz start button.
