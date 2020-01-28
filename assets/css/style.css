@@ -4,41 +4,28 @@ ul {
 }
 #container-score li {
     display: inline;
-    padding: 7%;
+    padding: 5%;
 }
 .container {
+    padding: 5%;
     background-color: black;
     color: white;
     width: 630px;
     height: 200px;
     opacity: 90%;
     vertical-align: middle;
-    display: table-cell;
     
     border-color: white;
     border-width: 3px;
     border-style: solid;
 }
 #container-score {
+    padding: 5%;
     background-color: black;
     color: white;
-    opacity: 90%;
-    margin: 0 auto;
     width: 630px;
-
-    border-color: white;
-    border-width: 3px;
-    border-style: solid;
-}
-#container-highscore {
-    background-color: black;
-    color: white;
     opacity: 90%;
-    margin: 0 auto;
-    width: 630px;
-    height: 330px;
-    vertical-align: middle;
-    display: table-cell;
+    
 
     border-color: white;
     border-width: 3px;
@@ -49,4 +36,42 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    font-family: 'Fira Code', monospace;
+}
+@media screen and (max-width:768px) {
+    .container {
+        width: 100%;
+    }
+    #container-questions {
+        width: 100%;
+    }
+    #container-score {
+        width: 100%;
+    }
+    #container-highscore {
+        width: 100%;
+    }
+    #container-timesup {
+        width: 100%;
+    }
+    #container-over {
+        width: 100%;
+    }
+}
+@media screen and (max-width:375px) {
+    .container {
+        width: 100%;
+    }
+    #container-questions {
+        width: 100%;
+    }
+    #container-score {
+        width: 100%;
+    }
+    #container-highscore {
+        width: 100%;
+    }
+    #container-over {
+        width: 100%;
+    }
 }
