@@ -95,13 +95,20 @@ function storeScores() {
     var storedScore = localStorage.getItem('score');
     var storedTime = localStorage.getItem('time');
     $('#highscores-list').append("<li>"+'Name: '+storedUser+" | "+'Score: '+storedScore+"/5 | Time: "+storedTime+"</li>");
+    document.getElementById("record-submit").innerText = "Your record has been submitted!";
+    document.getElementById("highscore-text").disabled = true;
+    document.getElementById("store-scores").disabled = true;
+    resetVars()
 }
-function tryAgain() {
+function resetVars() {
     counter=0;
     page=1;
     score=0;
     oTime=0;
     qTime=15;
+}
+function tryAgain() {
+    resetVars()
     $('#container-over').hide();
     $('#container-timesup').hide();
     $('#container-highscore').hide();
@@ -109,4 +116,7 @@ function tryAgain() {
     changeValues()
     countdownTime()
     countupTime()
+    document.getElementById("highscore-text").disabled = false;
+    document.getElementById("store-scores").disabled = false;
+    document.getElementById("record-submit").innerText = "Enter your name to save your score!";
 }

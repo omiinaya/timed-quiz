@@ -43,9 +43,9 @@
             </div>
             <br>
             <div id="container-highscore">
-                <p>Enter your name to save your score!</p>
+                <p id="record-submit">Enter your name to save your score!</p>
                 <input type="text" id="highscore-text" placeholder="Name"/>
-                <button onclick=storeScores()>Submit</button>
+                <button id="store-scores" onclick=storeScores()>Submit</button>
                 <h2>Highscores:</h2>
                 <ul id="highscores-list"></ul>
                 <button onclick=tryAgain()>Try Again</button>
