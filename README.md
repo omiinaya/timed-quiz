@@ -1,4 +1,4 @@
-# timed-quiz
+# timed-quiz | https://omiinaya.github.io/timed-quiz
 # 
 # 
 This is a timed quiz made using a dynamic HTML webpage, semantic tags, JavaScript, CSS for styling, Bootstrap and jQuery.
